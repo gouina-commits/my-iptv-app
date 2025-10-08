@@ -1,0 +1,8 @@
+{
+  "name": "my-iptv-app",
+  "version": "1.0.0",
+  "description": "IPTV Player for beIN Sports",
+  "scripts": {
+    "dev": "python -m http.server 3000"
+  }
+}
