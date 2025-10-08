@@ -1,276 +1,1598 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html dir='rtl' lang='ar' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قنوات beIN Sports مباشر</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-        }
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #ffd700;
-        }
-        
-        .player-container {
-            background: rgba(0,0,0,0.8);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .channels-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        .channel-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .channel-card:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-        .play-btn {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-            font-size: 16px;
-        }
-        
-        .external-player {
-            width: 100%;
-            height: 500px;
-            border: none;
-            border-radius: 10px;
-            background: #000;
-        }
-        
-        .instructions {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
-            text-align: center;
-        }
-    </style>
+<link href='https://www.blogger.com/static/v1/widgets/55013136-widget_css_bundle.css' rel='stylesheet' type='text/css'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='blogger' name='generator'/>
+<link href='https://gouinalivetv.blogspot.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='https://gouinalivetv.blogspot.com/' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="watch tv live - Atom" href="https://gouinalivetv.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="watch tv live - RSS" href="https://gouinalivetv.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="watch tv live - Atom" href="https://www.blogger.com/feeds/406452620620656663/posts/default" />
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<meta content='https://gouinalivetv.blogspot.com/' property='og:url'/>
+<meta content='watch tv live' property='og:title'/>
+<meta content='' property='og:description'/>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<title>IPTV Pro - مشغل القنوات المتقدم</title>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+<link href='https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css' rel='stylesheet'/>
+<style id='page-skin-1' type='text/css'>
+/*
+CSS Variables
+*/
+:root {
+    --primary-color: #e63946;
+    --primary-dark: #d62828;
+    --dark-bg: #111;
+    --dark-secondary: #222;
+    --dark-tertiary: #444;
+    --light-bg: #f4f4f9;
+    --text-light: #fff;
+    --text-dark: #333;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    --transition: all 0.3s ease;
+    
+    /* ألوان المشغل المحسن */
+    --primary: #1e3c72;
+    --secondary: #2a5298;
+    --accent: #ffd700;
+    --success: #4caf50;
+    --danger: #f44336;
+    --dark: #1a1a1a;
+    --light: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--light);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* الهيدر المحسن */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 30px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), #ff6b6b, #4caf50);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.custom-logo {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--accent), #ff6b6b);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--dark);
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+    border: 3px solid rgba(255,255,255,0.3);
+}
+
+.header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: var(--accent);
+    text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+}
+
+.header p {
+    font-size: 1.3em;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+/* أزرار التحكم */
+.control-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.control-btn {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--light);
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.control-btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+}
+
+.control-btn.primary {
+    background: linear-gradient(45deg, var(--accent), #ff8c00);
+    color: var(--dark);
+    font-weight: bold;
+}
+
+/* قسم المشغل المحسن */
+.player-section {
+    background: rgba(0,0,0,0.7);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.player-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+.player-header h2 {
+    color: var(--accent);
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.video-container {
+    background: #000;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+#videoPlayer {
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
+    background: #000;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+}
+
+.current-channel {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.channel-avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.channel-info {
+    flex: 1;
+}
+
+.channel-name {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.channel-status {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* بطاقات القنوات المحسنة */
+.channels-section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.section-title {
+    color: var(--accent);
+    font-size: 2.2em;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50px;
+    padding: 12px 20px;
+    color: var(--light);
+    width: 300px;
+    font-size: 14px;
+}
+
+.search-box::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.channels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.channel-card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.channel-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), #ff6b6b);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.channel-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.12);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.channel-card:hover::before {
+    transform: scaleX(1);
+}
+
+.channel-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.channel-logo {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 11px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.channel-details {
+    flex: 1;
+}
+
+.channel-name {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+.channel-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85em;
+    opacity: 0.8;
+}
+
+.channel-group {
+    background: rgba(255,255,255,0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+}
+
+.channel-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.play-btn {
+    flex: 1;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.copy-btn {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 12px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* قسم رفع الملفات */
+.upload-section {
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 40px;
+    border: 2px dashed rgba(255,255,255,0.2);
+    text-align: center;
+}
+
+.upload-area {
+    padding: 40px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.upload-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+/* حالة عدم التشغيل */
+.no-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 60px;
+}
+
+.no-player i {
+    font-size: 5em;
+    margin-bottom: 20px;
+    color: var(--accent);
+    opacity: 0.7;
+}
+
+/* التكيف مع الهواتف */
+@media (max-width: 768px) {
+    .channels-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+    
+    .control-buttons {
+        flex-direction: column;
+    }
+    
+    #videoPlayer {
+        height: 300px;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .player-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
+
+/* تأثيرات إضافية */
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* الحفاظ على التصميم الأصلي للقنوات */
+.channels-container {
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+    background: var(--light-bg);
+    padding: 20px;
+}
+
+.category {
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: var(--dark-secondary);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.category-header:hover {
+    background: var(--dark-tertiary);
+}
+
+.category-header h3 {
+    margin: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.category-toggle:hover {
+    color: var(--primary-color);
+}
+
+.channels {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background: white;
+}
+
+.channel {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.channel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.channel.active {
+    border: 2px solid var(--primary-color);
+}
+
+.channel-live-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 5px rgba(230, 57, 70, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
+    }
+}
+
+.channel-favorite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.channel-favorite:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.channel-favorite.active {
+    color: #ffc107;
+}
+
+.channel img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    background: #eee;
+    padding: 10px;
+}
+
+.channel h3 {
+    margin: 10px 0;
+    font-size: 16px;
+    padding: 0 10px;
+    color: var(--text-dark);
+}
+
+.channel button {
+    margin: 10px 0 15px;
+    padding: 8px 15px;
+    background: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.channel button:hover {
+    background: var(--primary-dark);
+}
+
+/* الوضع الداكن */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .category {
+    background: #1e1e1e;
+}
+
+body.dark-mode .category-header {
+    background: #333;
+}
+
+body.dark-mode .channels {
+    background: #1e1e1e;
+}
+
+body.dark-mode .channel {
+    background: #2d2d2d;
+}
+
+body.dark-mode .channel h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .channel img {
+    background: #3d3d3d;
+}
+
+body.dark-mode .channels-container {
+    background: #121212;
+}
+
+/* تحسينات التجاوبية للهواتف */
+@media (max-width: 768px) {
+    .channels {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        padding: 15px;
+    }
+    
+    .channel img {
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .channels {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .channel h3 {
+        font-size: 14px;
+    }
+    
+    .channel button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+</style>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=406452620620656663&amp;zx=12097d3b-d284-4f9e-8e80-87edfa3d3fdd' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=406452620620656663&amp;zx=12097d3b-d284-4f9e-8e80-87edfa3d3fdd' rel='stylesheet'/></noscript>
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>📺 قنوات beIN Sports مباشر</h1>
-            <p>إصدار Vercel - يعمل على جميع الأجهزة</p>
-        </div>
-
-        <div class="player-container">
-            <h3 style="color: #ffd700; margin-bottom: 15px;">🎬 المشغل</h3>
-            <div id="playerContent">
-                <div style="padding: 40px; text-align: center;">
-                    <div style="font-size: 4em; margin-bottom: 20px;">📺</div>
-                    <p style="font-size: 1.2em;">اختر قناة من القائمة أدناه للبدء في المشاهدة</p>
-                    <p style="opacity: 0.7; margin-top: 10px;">سيتم فتح القناة في نافذة جديدة</p>
-                </div>
+<body class='loading '>
+<div class='container'>
+    <!-- الهيدر المحسن -->
+    <div class="header fade-in">
+        <div class="logo-container">
+            <div class="custom-logo pulse">
+                IPTV<br>PRO
+            </div>
+            <div>
+                <h1><i class="fas fa-satellite-dish"></i> مشغل القنوات المتقدم</h1>
+                <p>منصة احترافية لبث القنوات المباشرة</p>
             </div>
         </div>
-
-        <div>
-            <h2 style="text-align: center; margin-bottom: 25px; color: #ffd700;">📡 القنوات المتاحة</h2>
-            <div class="channels-grid" id="channelsList">
-                <!-- القنوات تُحمّل هنا -->
-            </div>
-        </div>
-
-        <div class="instructions">
-            <h3 style="color: #ffd700; margin-bottom: 15px;">ℹ️ تعليمات التشغيل</h3>
-            <p>✅ انقر على أي قناة لتشغيلها في نافذة جديدة</p>
-            <p>✅ قد تحتاج إلى السماح بالنوافذ المنبثقة في المتصفح</p>
-            <p>✅ بعض القنوات قد تحتاج إلى VPN</p>
+        
+        <div class="control-buttons">
+            <button class="control-btn" onclick="showUploadSection()">
+                <i class="fas fa-upload"></i> رفع ملف M3U
+            </button>
+            <button class="control-btn" onclick="exportPlaylist()">
+                <i class="fas fa-download"></i> تصدير القنوات
+            </button>
+            <button class="control-btn primary" onclick="showInstructions()">
+                <i class="fas fa-info-circle"></i> تعليمات التشغيل
+            </button>
         </div>
     </div>
 
-    <script>
-        // قنوات beIN Sports
-        const channels = [
-            { name: "beIN Sport Global HD", url: "http://spacetvee.com:80/live/reduone202507/vZ43SFtXPO2zqZ/22186.m3u8" },
-            { name: "beIN Sport News HD", url: "http://spacetvee.com:80/live/reduone202507/vZ43SFtXPO2zqZ/318230.m3u8" },
-            { name: "beIN Sport 1 HD", url: "http://spacetvee.com:80/live/reduone202507/vZ43SFtXPO2zqZ/325793.m3u8" },
-            { name: "beIN Sport 2 HD", url: "http://spacetvee.com:80/live/reduone202507/vZ43SFtXPO2zqZ/325794.m3u8" },
-            { name: "beIN Sport 3 HD", url: "http://spacetvee.com:80/live/reduone202507/vZ43SFtXPO2zqZ/325795.m3u8" },
-            { name: "beIN Sport 4 HD", url: "http://spacetvee.com:80/live/reduone202507/vZ43SFtXPO2zqZ/325796.m3u8" },
-            { name: "beIN Sport 5 HD", url: "http://spacetvee.com:80/live/reduone202507/vZ43SFtXPO2zqZ/325797.m3u8" },
-            { name: "beIN Sport 6 HD", url: "http://spacetvee.com:80/live/reduone202507/vZ43SFtXPO2zqZ/325798.m3u8" },
-            { name: "beIN Sport 7 HD", url: "http://spacetvee.com:80/live/reduone202507/vZ43SFtXPO2zqZ/325799.m3u8" },
-            { name: "beIN Sport 8 HD", url: "http://spacetvee.com:80/live/reduone202507/vZ43SFtXPO2zqZ/325800.m3u8" },
-            { name: "beIN Sport 9 HD", url: "http://spacetvee.com:80/live/reduone202507/vZ43SFtXPO2zqZ/325801.m3u8" },
-            { name: "beIN Sport 10 HD", url: "http://spacetvee.com:80/live/reduone202507/vZ43SFtXPO2zqZ/325802.m3u8" }
-        ];
+    <!-- قسم المشغل المحسن -->
+    <div class="player-section fade-in">
+        <div class="player-header">
+            <h2><i class="fas fa-play-circle"></i> المشغل الرئيسي</h2>
+            <div class="player-controls">
+                <button class="control-btn" onclick="toggleFullscreen()">
+                    <i class="fas fa-expand"></i> ملء الشاشة
+                </button>
+            </div>
+        </div>
+        
+        <div class="video-container">
+            <video id="videoPlayer" controls style="display: none;"></video>
+            <div id="noPlayer" class="no-player">
+                <i class="fas fa-tv"></i>
+                <h3>مرحباً بك في المشغل المتقدم</h3>
+                <p>اختر قناة من القائمة أدناه للبدء في المشاهدة</p>
+            </div>
+        </div>
+        
+        <div id="currentChannel" class="current-channel" style="display: none;">
+            <div class="channel-avatar">
+                <i class="fas fa-satellite"></i>
+            </div>
+            <div class="channel-info">
+                <div class="channel-name" id="currentChannelName">القناة الحالية</div>
+                <div class="channel-status" id="currentChannelStatus">جاري البث المباشر...</div>
+            </div>
+            <div class="channel-actions">
+                <button class="control-btn" onclick="stopPlayback()">
+                    <i class="fas fa-stop"></i> إيقاف
+                </button>
+            </div>
+        </div>
+    </div>
 
-        function displayChannels() {
-            const container = document.getElementById('channelsList');
-            
-            channels.forEach((channel) => {
-                const channelCard = document.createElement('div');
-                channelCard.className = 'channel-card';
-                channelCard.innerHTML = `
-                    <div style="background: white; width: 50px; height: 50px; border-radius: 8px; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; color: #1e3c72; font-weight: bold; font-size: 9px;">
-                        beIN
+    <!-- قسم القنوات المحسن -->
+    <div class="channels-section fade-in">
+        <div class="section-header">
+            <h2 class="section-title">
+                <i class="fas fa-list-alt"></i> القنوات المتاحة
+                <span class="channel-count" id="channelCount"></span>
+            </h2>
+            <input type="text" class="search-box" id="channelSearch" placeholder="🔍 ابحث عن قناة..." onkeyup="filterChannels()">
+        </div>
+        
+        <div class="channels-grid" id="channelsList">
+            <!-- القنوات تُحمّل هنا -->
+        </div>
+    </div>
+
+    <!-- قسم رفع الملفات -->
+    <div class="upload-section fade-in" id="uploadSection" style="display: none;">
+        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+            <div class="upload-icon">
+                <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <h3>رفع ملف M3U</h3>
+            <p>اسحب وأسقط ملف M3U هنا أو انقر للاختيار</p>
+            <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px;">
+                يدعم الملفات بصيغة .m3u و .m3u8
+            </p>
+        </div>
+        <input type="file" id="fileInput" accept=".m3u,.m3u8" style="display: none;" onchange="handleFileUpload(this.files)">
+    </div>
+
+    <!-- المحتوى الأصلي للقنوات -->
+    <div class="channels-container">
+        <section class="category" id="sports-category">
+            <div class="category-header">
+                <h2><i class="fas fa-futbol"></i> القنوات الرياضية</h2>
+                <button class="category-toggle" data-category="sports">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+            <div class="channels" id="sports-channels">
+                <!-- القنوات الرياضية تُحمّل هنا -->
+            </div>
+        </section>
+
+        <section class="category" id="news-category">
+            <div class="category-header">
+                <h2><i class="fas fa-newspaper"></i> القنوات الإخبارية</h2>
+                <button class="category-toggle" data-category="news">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+            <div class="channels" id="news-channels">
+                <!-- القنوات الإخبارية تُحمّل هنا -->
+            </div>
+        </section>
+
+        <section class="category" id="general-category">
+            <div class="category-header">
+                <h2><i class="fas fa-globe"></i> القنوات العامة</h2>
+                <button class="category-toggle" data-category="general">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+            <div class="channels" id="general-channels">
+                <!-- القنوات العامة تُحمّل هنا -->
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src='https://cdn.jsdelivr.net/npm/hls.js@latest'></script>
+<script>
+//<![CDATA[
+// بيانات القنوات (نفس البيانات الأصلية)
+const channels = [
+    // ...// القنوات الأصلية
+    {id:1, name:"Alkass One HD", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass1muytrdc/master.m3u8", category: "sports", logo: "https://e7.pngegg.com/pngimages/775/852/png-clipart-al-kass-sports-channels-qatar-television-channel-nilesat-others-purple-television.png"},
+    {id:2, name:"Alkass Two HD", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass2hefazq/master.m3u8", category: "sports", logo: "https://e7.pngegg.com/pngimages/775/852/png-clipart-al-kass-sports-channels-qatar-television-channel-nilesat-others-purple-television.png"},
+    {id:3, name:"Alkass Three HD", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass3vakazq/master.m3u8", category: "sports", logo: "https://e7.pngegg.com/pngimages/775/852/png-clipart-al-kass-sports-channels-qatar-television-channel-nilesat-others-purple-television.png"},
+    {id:4, name:"Alkass Four HD", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass4azq/master.m3u8", category: "sports", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Alkass_logo.png"},
+    {id:5, name:"Alkass Five HD", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass5azq/master.m3u8", category: "sports", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Alkass_logo.png"},
+    {id:6, name:"Alkass Six HD", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass6buzay/master.m3u8", category: "sports", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Alkass_logo.png"},
+    {id:7, name:"Alkass SHOOF HD", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass6Shoof1ab/master.m3u8", category: "sports", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Alkass_logo.png"},
+    {id:8, name:"Al Jazeera Documentary", url:"https://live-hls-apps-ajd-fa.getaj.net/AJD/index.m3u8", category: "documentary", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Aljazeera.svg"},
+    {id:9, name:"Al Jazeera Documentary Alt", url:"http://213.57.91.138:8000/play/a06h", category: "documentary", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Aljazeera.svg"},
+    {id:10, name:"Al Maaref", url:"https://672a3a5c8e335.streamlock.net/AlMaaref/smil:almaareflive.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al+Maaref"},
+    {id:11, name:"Al Rayyan TV", url:"https://alrayyancdn.vidgyor.com/pub-noalrayy3pwz0l/liveabr/playlist_dvr.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Rayyan"},
+    {id:12, name:"Al Rayyan Al Qadeem", url:"https://alrayyancdn.vidgyor.com/pub-nooldraybinbdh/liveabr/playlist_dvr.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Rayyan"},
+    {id:13, name:"Qatar Television", url:"https://live.kwikmotion.com/qtv1live/qtv1.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Qatar+TV"},
+    {id:14, name:"Qatar Television 2", url:"https://live.kwikmotion.com/qtv2live/qtv2.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Qatar+TV2"},
+
+    // القنوات الجديدة - جميع الـ 399 قناة
+    {id:15, name:"2M", url:"https://viamotionhsi.netplus.ch/live/eds/2mmaroc/browser-dash/2mmaroc.mpd", category: "general", logo: "https://via.placeholder.com/150?text=2M"},
+    {id:16, name:"2M Monde", url:"https://cdn-globecast.akamaized.net/live/eds/2m_monde/hls_video_ts_tuhawxpiemz257adfc/2m_monde.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=2M+Monde"},
+    {id:17, name:"2M Monde +1", url:"https://d2qh3gh0k5vp3v.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-n6pess5lwbghr/2M_ES.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=2M+Monde+1"},
+    {id:18, name:"Abadan", url:"https://lenz.splus.ir/PLTV/88888888/224/3221227000/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Abadan"},
+    {id:19, name:"Abdulmajeed Abdullah", url:"https://d2hng5r56zpsbw.cloudfront.net/out/v1/9c4c990f44bb4767bb46271f326dd574/index.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Abdulmajeed"},
+    {id:20, name:"ABNsat", url:"https://mediaserver.abnvideos.com/streams/abnsat.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=ABNsat"},
+    {id:21, name:"Abu Dhabi Aloula", url:"https://vo-live-media.cdb.cdn.orange.com/Content/Channel/AbuDhabiChannel/HLS/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Abu+Dhabi"},
+    {id:22, name:"Abu Dhabi Emirates", url:"https://vo-live-media.cdb.cdn.orange.com/Content/Channel/EmiratesChannel/HLS/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Abu+Dhabi"},
+    {id:23, name:"Abu Dhabi Sports 1", url:"https://vo-live-media.cdb.cdn.orange.com/Content/Channel/AbuDhabiSportsChannel1/HLS/index.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=AD+Sports"},
+    {id:24, name:"Abu Dhabi Sports 2", url:"https://vo-live-media.cdb.cdn.orange.com/Content/Channel/AbuDhabiSportsChannel2/HLS/index.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=AD+Sports2"},
+    {id:25, name:"Abu Dhabi TV", url:"http://dvrfl05.bozztv.com/gin-abudhabitv/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Abu+Dhabi+TV"},
+    {id:26, name:"Access Sacramento Channel 18", url:"https://reflect-access-sacramento.cablecast.tv/live-8/live/live.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Sacramento"},
+    {id:27, name:"Afaq TV", url:"http://63b03f7689049.streamlock.net:1935/live/1/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Afaq+TV"},
+    {id:28, name:"Afghanistan International", url:"https://hls.afintl.com/hls/stream.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Afghanistan"},
+    {id:29, name:"Aflam", url:"https://shls-live-enc.edgenextcdn.net/out/v1/0044dd4b001a466c941ad77b04a574a2/index.m3u8", category: "movies", logo: "https://via.placeholder.com/150?text=Aflam"},
+    {id:30, name:"Aghani Aghani TV", url:"https://streaming-a-1035.cdn.nextologies.com/6zj8y5nemi8a32vyjjbkv0oqx/77pcakd8reik3g8qdqnexlkmq/playlist.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Aghani"},
+    {id:31, name:"Aghapy Kids", url:"https://5b622f07944df.streamlock.net/aghapykids.tv/aghapykids2/playlist.m3u8", category: "kids", logo: "https://via.placeholder.com/150?text=Aghapy+Kids"},
+    {id:32, name:"Aghapy TV", url:"https://5b622f07944df.streamlock.net/aghapy.tv/aghapy.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Aghapy+TV"},
+    {id:33, name:"Ajman TV", url:"https://cdn1.logichost.in/ajmantv/live/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Ajman+TV"},
+    {id:34, name:"Ajyal TV", url:"http://htvmada.mada.ps:8888/ajyal/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Ajyal+TV"},
+    {id:35, name:"AL24 News", url:"https://cdn.live.easybroadcast.io/abr_corp/66_al24_u4yga6h/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=AL24"},
+    {id:36, name:"Al Ahad TV", url:"http://63b03f7689049.streamlock.net:1935/live/7/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al+Ahad"},
+    {id:37, name:"Al Alam", url:"https://live2.alalam.ir/alalam.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Alam"},
+    {id:38, name:"Al Alamiya 2", url:"http://82.212.74.98:8000/live/7815.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Alamiya"},
+    {id:39, name:"Al Aqsa Channel", url:"http://167.172.161.13/hls/feedspare/6udfi7v8a3eof6nlps6e9ovfrs65c7l7.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Aqsa"},
+    {id:40, name:"Al Arabiya", url:"https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Arabiya"},
+    {id:41, name:"Al Arabiya Al Hadath", url:"https://av.alarabiya.net/alarabiapublish/alhadath.smil/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Hadath"},
+    {id:42, name:"Al Arabiya Business", url:"https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8", category: "business", logo: "https://via.placeholder.com/150?text=Al+Arabiya+Business"},
+    {id:43, name:"Al Arabiya Programs", url:"https://d1j4r34gq3qw9y.cloudfront.net/out/v1/96804f3a14864641a21c25e8ca9afb74/index.m3u8", category: "entertainment", logo: "https://via.placeholder.com/150?text=Al+Arabiya+Prog"},
+    {id:44, name:"Al Araby TV", url:"https://live.kwikmotion.com/alaraby1live/alaraby_abr/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Araby"},
+    {id:45, name:"Al Araby TV 2", url:"https://live.kwikmotion.com/alaraby2live/alaraby2.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Araby+2"},
+    {id:46, name:"Al Ayyam TV", url:"http://63b03f7689049.streamlock.net:1935/live/6/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Ayyam"},
+    {id:47, name:"Al Dafrah TV", url:"https://rtmp-live-ingest-eu-west-3-universe-dacast-com.akamaized.net/transmuxv1/streams/dbb8ac05-a020-784c-3a95-6ed027941532.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Dafrah"},
+    {id:48, name:"Al Ekhbariya", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-al-ekhbaria/297b3ef1cd0633ad9cfba7473a686a06/index.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Ekhbariya"},
+    {id:49, name:"Al Eshraq TV", url:"http://63b03f7689049.streamlock.net:1935/live/19/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al+Eshraq"},
+    {id:50, name:"Al Etejah TV", url:"http://63b03f7689049.streamlock.net:1935/live/33/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Etejah"},
+    {id:51, name:"Al Ghad TV", url:"https://eazyvwqssi.erbvr.com/alghadtv/alghadtv.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Ghad"},
+    {id:52, name:"Al Hayat TV", url:"https://cdn3.wowza.com/5/OE5HREpIcEkySlNT/alhayat-live/ngrp:livestream_all/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Hayat"},
+    {id:53, name:"Al Horreya TV", url:"http://media.smc-host.com:1935/alhorreya.tv/mp4:alhorreya3/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Horreya"},
+    {id:54, name:"Al Iraqia", url:"https://cdn.catiacast.video/abr/8d2ffb0aba244e8d9101a9488a7daa05/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Iraqia"},
+    {id:55, name:"Al Iraqia News", url:"https://cdn.catiacast.video/abr/78054972db7708422595bc96c6e024ac/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Iraqia+News"},
+    {id:56, name:"Al Ittihad", url:"http://185.105.4.151:8080/_defapp_/ittihad/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Ittihad"},
+    {id:57, name:"Al Jadeed", url:"http://185.9.2.18/chid_391/mono.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Jadeed"},
+    {id:58, name:"Al Janoub TV", url:"http://63b03f7689049.streamlock.net:1935/live/18/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Janoub"},
+    {id:59, name:"Al Jazeera", url:"https://live-hls-apps-aja-fa.getaj.net/AJA/index.m3u8", category: "news", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Aljazeera.svg"},
+    {id:60, name:"Al Jazeera Mubasher", url:"https://live-hls-apps-ajm-fa.getaj.net/AJM/index.m3u8", category: "news", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Aljazeera.svg"},
+    {id:61, name:"Al Jazeera Mubasher 24", url:"https://live-hls-apps-ajm24-fa.getaj.net/AJM24/index.m3u8", category: "news", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Aljazeera.svg"},
+    {id:62, name:"Al Jazeera Mubasher Broadcast 2", url:"https://live-hls-apps-ajm2-fa.getaj.net/AJM2/index.m3u8", category: "news", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Aljazeera.svg"},
+    {id:63, name:"Al Maghribia", url:"https://viamotionhsi.netplus.ch/live/eds/almaghribia/browser-dash/almaghribia.mpd", category: "general", logo: "https://via.placeholder.com/150?text=Al+Maghribia"},
+    {id:64, name:"Al Mamlaka TV", url:"https://bcovlive-a.akamaihd.net/4109c7ba30fd4a44ad9afe917c67a8c8/eu-central-1/6415809151001/playlist_dvr.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Mamlaka"},
+    {id:65, name:"Al Manar", url:"https://edge.fastpublish.me/live/index.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Manar"},
+    {id:66, name:"Al Masar TV", url:"https://starmenajo.com/hls/almasar/index.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al+Masar"},
+    {id:67, name:"Al Masirah", url:"https://live.cdnbridge.tv/Almasirah/Almasirah_all/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Masirah"},
+    {id:68, name:"Al Masirah Mubacher", url:"https://live2.cdnbridge.tv/AlmasirahMubasher/Mubasher_All/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Masirah+Mub"},
+    {id:69, name:"Al Masriyah", url:"https://fl1002.bozztv.com/ga-almasriya/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Masriyah"},
+    {id:70, name:"Al Mayadeen", url:"https://mdnlv.cdn.octivid.com/almdn/smil:mpegts.stream.smil/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Mayadeen"},
+    {id:71, name:"Al Najah News", url:"https://streaming.najah.edu:8443/hls/AlNajah.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Najah"},
+    {id:72, name:"Al Nujaba", url:"http://63b03f7689049.streamlock.net:1935/live/3/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al+Nujaba"},
+    {id:73, name:"Al Qahera News", url:"https://bcovlive-a.akamaihd.net/d30cbb3350af4cb7a6e05b9eb1bfd850/eu-west-1/6057955906001/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Qahera"},
+    {id:74, name:"Al Qamar TV", url:"https://streamer3.premio.link/alqamar/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Qamar"},
+    {id:75, name:"Al Quran Al Kareem TV", url:"https://cdn-globecast.akamaized.net/live/eds/saudi_quran/hls_roku/index.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al+Quran"},
+    {id:76, name:"Al Rabiaa TV", url:"https://stream.castr.com/65045e4aba85cfe0025e4a60/live_c6c4040053cd11ee95b47153d2861736/index.fmp4.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Rabiaa"},
+    {id:77, name:"Al Rafidain", url:"https://arrafidain.tvplayer.online/arrafidaintv/source/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Rafidain"},
+    {id:78, name:"Al Rasheed TV", url:"https://media1.livaat.com/static/AL-RASHEED-HD/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Rasheed"},
+    {id:79, name:"Al Resalah", url:"https://rotana.hibridcdn.net/rotananet/risala_net-7Y83PP5adWixDF93/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al+Resalah"},
+    {id:80, name:"Al Riyadh Radio", url:"https://live.kwikmotion.com/sbrksariyadhradiolive/srpksariyadhradio/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Al+Riyadh+Radio"},
+    {id:81, name:"Al Saudiya", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-saudi-tv/2ad66056b51fd8c1b624854623112e43/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Saudiya"},
+    {id:82, name:"Al Saudiya Alaan", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-ksa-now/71ed3aa814c643306c0a8bc4fcc7d17f/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Saudiya+Alaan"},
+    {id:83, name:"Al Shallal TV", url:"https://amg01480-alshallalfze-alshallal-ono-q0hfg.amagi.tv/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Shallal"},
+    {id:84, name:"Al Sharqiya", url:"https://5d94523502c2d.streamlock.net/home/mystream/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Sharqiya"},
+    {id:85, name:"Al Sharqiya News", url:"https://5d94523502c2d.streamlock.net/alsharqiyalive/mystream/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Al+Sharqiya+News"},
+    {id:86, name:"Al Sharqiya Min Kabla", url:"https://svs.itworkscdn.net/kablatvlive/kabtv1.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Sharqiya+Kabla"},
+    {id:87, name:"Al Sunnah Al Nabawiyah TV", url:"https://cdn-globecast.akamaized.net/live/eds/saudi_sunnah/hls_roku/index.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al+Sunnah"},
+    {id:88, name:"Al Wilayah", url:"https://nl.livekadeh.com/hls2/alwilayah_tv.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al+Wilayah"},
+    {id:89, name:"Al Wousta TV", url:"https://svs.itworkscdn.net/alwoustalive/alwoustatv.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Wousta"},
+    {id:90, name:"Al Yaum TV", url:"https://iko-live.akamaized.net/AlyuamTV/master.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al+Yaum"},
+    {id:91, name:"Al-Aimma TV", url:"http://stream.alaimma.tv/hls/alaimma/h3b1rd584cpq8p60okoj01rnfigdcnia.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al-Aimma"},
+    {id:92, name:"Al-Fady TV", url:"https://5d658d7e9f562.streamlock.net/alfadytv.tv/alfadytv.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al-Fady"},
+    {id:93, name:"Al-Jawadain TV", url:"https://live.aljawadain.org/live/aljawadaintv/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al-Jawadain"},
+    {id:94, name:"Al-MahdiTV", url:"https://iptv.almahditv.com/almahditv/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al-Mahdi"},
+    {id:95, name:"Al-Majd Holy Quran", url:"https://edge66.magictvbox.com/liveApple/al_majd/tracks-v1a1/mono.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al-Majd+Quran"},
+    {id:96, name:"Al-Naeem TV", url:"https://nl2.livekadeh.com/hls2/alnaeem.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Al-Naeem"},
+    {id:97, name:"Al-Sahat TV", url:"https://assahat.b-cdn.net/Assahat/assahatobs/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Al-Sahat"},
+    {id:98, name:"Alawla TV", url:"https://63b03f7689049.streamlock.net/live/1tv/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Alawla"},
+    {id:99, name:"Alerth Alnabawi Channel", url:"http://82.212.74.2:8000/live/7307.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Alerth+Alnabawi"},
+    {id:100, name:"Alfath Sonnah TV", url:"https://alfat7-q.com:5443/LiveApp/streams/986613792230697141226562.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Alfath+Sonnah"},
+    {id:101, name:"Alforat TV", url:"http://95.216.180.111:1935/live/10/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Alforat"},
+    {id:102, name:"Alhaqeqa Aldawlia", url:"https://ghaasiflu.online/alhqeqa/index.m3u8", category: "documentary", logo: "https://via.placeholder.com/150?text=Alhaqeqa+Aldawlia"},
+    {id:103, name:"Alhayat TV", url:"https://fl1002.bozztv.com/ga-alhayah/tracks-v1a1/mono.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Alhayat"},
+    {id:104, name:"Alhiwar TV", url:"https://mn-nl.mncdn.com/alhiwar_live/smil:alhiwar.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Alhiwar"},
+    {id:105, name:"Alhurra", url:"https://mbn-ingest-worldsafe.akamaized.net/hls/live/2038900/MBN_Alhurra_Worldsafe_HLS/master.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Alhurra"},
+    {id:106, name:"Alhurra Iraq", url:"https://mbn-ingest-worldsafe.akamaized.net/hls/live/2038899/MBN_Iraq_Worldsafe_HLS/master.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Alhurra+Iraq"},
+    {id:107, name:"Aliman TV", url:"https://svs.itworkscdn.net/alimanlive/imantv.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Aliman"},
+    {id:108, name:"Alistiqama TV", url:"https://jmc-live.ercdn.net/alistiqama/alistiqama.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Alistiqama"},
+    {id:109, name:"Alkarma TV Australia", url:"https://5a8308add0b31.streamlock.net/alkarmatv.com/alkarmaau.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Alkarma+AU"},
+    {id:110, name:"Alkarma TV Family", url:"https://58cc65c534c67.streamlock.net/alkarmatv.com/alkarmaNA2.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Alkarma+Family"},
+    {id:111, name:"Alkarma TV Middle East", url:"https://58cc65c534c67.streamlock.net/alkarmatv.com/alkarmame1.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Alkarma+ME"},
+    {id:112, name:"Alkarma TV North America & Canada", url:"https://5aafcc5de91f1.streamlock.net/alkarmatv.com/alkarmana1.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Alkarma+NA"},
+    {id:113, name:"Alkarma TV Praise", url:"https://58cc65c534c67.streamlock.net/alkarmatv.com/alkarmapa.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Alkarma+Praise"},
+    {id:114, name:"Alkarma TV Talmaza (Discipleship)", url:"https://58cc65c534c67.streamlock.net/alkarmatv.com/alkarmame2.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Alkarma+Talmaza"},
+    {id:115, name:"Alkarma TV Youth & English", url:"https://5aafcc5de91f1.streamlock.net/alkarmatv.com/alkarmaus.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Alkarma+Youth"},
+    {id:116, name:"AlKawthar", url:"https://lenz.splus.ir/PLTV/88888888/224/3221226158/index.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=AlKawthar"},
+    {id:117, name:"Alkerazatv", url:"https://hwlive.streamingmediahosting.com/14221-live/0_ahgiewbd/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Alkerazatv"},
+    {id:118, name:"Alkhuzama Radio", url:"https://live.kwikmotion.com/sbrksakhuzamaradiolive/srpkhuzama/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Alkhuzama+Radio"},
+    {id:119, name:"Almagd TV Middle East", url:"https://597f64b67707a.streamlock.net/almagd.tv/almagd.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Almagd+ME"},
+    {id:120, name:"Almagd TV North America", url:"https://5aafcc5de91f1.streamlock.net/almagd.tv/almagd.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Almagd+NA"},
+    {id:121, name:"Almahriah TV", url:"https://starmenajo.com/hls/almahriah/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Almahriah"},
+    {id:122, name:"Alquran", url:"https://ktvlive.online/stream/hls/ch1.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Alquran"},
+    {id:123, name:"AlShoub", url:"https://play.tactivemedia.com/memfs/c5919b97-5329-4b84-91b2-613c6ed9953e.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=AlShoub"},
+    {id:124, name:"Altaghier TV", url:"https://jmc-live.ercdn.net/altaghier/altaghier.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Altaghier"},
+    {id:125, name:"Althania", url:"https://live.kwikmotion.com/syriatv02live/syriatv02.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Althania"},
+    {id:126, name:"ALWifak News TV", url:"http://alwifaklive.info:1935/live/myStream/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=ALWifak+News"},
+    {id:127, name:"Amman TV", url:"https://ammantv-live.ercdn.net/ammantvhd/ammantvhd.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Amman+TV"},
+    {id:128, name:"Amou Yazid TV", url:"http://mkstream.servehttp.com:1940/AmouYazid/ay1/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Amou+Yazid"},
+    {id:129, name:"Anwar TV2", url:"https://cloud.odysee.live/content/f92670235a1ce2bce4cf77671cc4dcc2188baa1d/master.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Anwar+TV2"},
+    {id:130, name:"Arabica TV", url:"http://istream.binarywaves.com:8081/hls/arabica/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Arabica+TV"},
+    {id:131, name:"Asharq Discovery", url:"https://svs.itworkscdn.net/asharqdiscoverylive/asharqd.smil/playlist_dvr.m3u8", category: "documentary", logo: "https://via.placeholder.com/150?text=Asharq+Discovery"},
+    {id:132, name:"Asharq Documentary", url:"https://svs.itworkscdn.net/asharqdocumentarylive/asharqdocumentary.smil/playlist_dvr.m3u8", category: "documentary", logo: "https://via.placeholder.com/150?text=Asharq+Doc"},
+    {id:133, name:"Asharq News", url:"https://bcovlive-a.akamaihd.net/0b75ef0a49e24704a4ca023d3a82c2df/ap-south-1/6203311941001/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Asharq+News"},
+    {id:134, name:"Asharq News Portrait", url:"https://bcovlive-a.akamaihd.net/ed81ac1118414d4fa893d3a83ccec9be/eu-central-1/6203311941001/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Asharq+Portrait"},
+    {id:135, name:"Asharq Radio", url:"https://svs.itworkscdn.net/asharqradiovlive/asharqradiov/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Asharq+Radio"},
+    {id:136, name:"Asil TV", url:"https://live.asil.tv/asiltv/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Asil+TV"},
+    {id:137, name:"Assirat TV", url:"https://softverse.b-cdn.net/Assirat/assiratobs/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Assirat+TV"},
+    {id:138, name:"Atfal & Mawaheb TV", url:"https://5aafcc5de91f1.streamlock.net/atfal1.com/atfal2/playlist.m3u8", category: "kids", logo: "https://via.placeholder.com/150?text=Atfal+Mawaheb"},
+    {id:139, name:"ATVSat", url:"https://stream.atvsat.com/atvsatlive/smil:atvsatlive.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=ATVSat"},
+    {id:140, name:"Bab Al Hara", url:"https://shls-live-enc.edgenextcdn.net/out/v1/948c54279b594944adde578c95f1d7d1/index.m3u8", category: "drama", logo: "https://via.placeholder.com/150?text=Bab+Al+Hara"},
+    {id:141, name:"BabyFirst", url:"https://streams2.sofast.tv/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/c8d16110-566c-4e95-a1df-55d175e9e201/manifest.m3u8", category: "kids", logo: "https://via.placeholder.com/150?text=BabyFirst"},
+    {id:142, name:"Bahrain International", url:"https://5c7b683162943.streamlock.net/live/ngrp:bahraininternational_all/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Bahrain+Int"},
+    {id:143, name:"Bahrain Quran", url:"https://5c7b683162943.streamlock.net/live/ngrp:bahrainquran_all/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Bahrain+Quran"},
+    {id:144, name:"Bahrain Sports 1", url:"https://5c7b683162943.streamlock.net/live/ngrp:sportsone_all/playlist.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Bahrain+Sports1"},
+    {id:145, name:"Bahrain Sports 2", url:"https://5c7b683162943.streamlock.net/live/ngrp:bahrainsportstwo_all/playlist.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Bahrain+Sports2"},
+    {id:146, name:"Bahrain TV", url:"https://5c7b683162943.streamlock.net/live/ngrp:bahraintvmain_all/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Bahrain+TV"},
+    {id:147, name:"Bahry", url:"https://live.kwikmotion.com/bahry1live/bahry1.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Bahry"},
+    {id:148, name:"Baynounah TV", url:"https://vo-live-media.cdb.cdn.orange.com/Content/Channel/Baynounah/HLS/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Baynounah"},
+    {id:149, name:"Bayyinat TV", url:"https://nl2.livekadeh.com/hls2/Bayyinat.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Bayyinat"},
+    {id:150, name:"BBC Arabic", url:"https://vs-cmaf-pushb-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_arabic_tv/pc_hd_abr_v2.mpd", category: "news", logo: "https://via.placeholder.com/150?text=BBC+Arabic"},
+    {id:151, name:"BeitolAbbas TV Channel", url:"https://live.beitolabbas.tv/live/beitolabbastv.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=BeitolAbbas"},
+    {id:152, name:"Big Time Plus", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-big-time-plus/924283f994779a311c1389698ff7e736/index.m3u8", category: "entertainment", logo: "https://via.placeholder.com/150?text=Big+Time+Plus"},
+    {id:153, name:"CBC", url:"https://bcovlive-a.akamaihd.net/0c223ac0a9d34b30b100cb92ee83b70a/us-west-2/6057955906001/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=CBC"},
+    {id:154, name:"CBC Drama", url:"https://fl1002.bozztv.com/ga-cbcdrama/index.m3u8", category: "drama", logo: "https://via.placeholder.com/150?text=CBC+Drama"},
+    {id:155, name:"CBC Sofra", url:"https://bcovlive-a.akamaihd.net/753a1f2c951b4fb3914f30e1deb147d8/us-west-2/6057955906001/playlist.m3u8", category: "cooking", logo: "https://via.placeholder.com/150?text=CBC+Sofra"},
+    {id:156, name:"CGTN Arabic", url:"https://arabic-livews.cgtn.com/hls/LSveq57bErWLinBnxosqjisZ220802LSTefTAS9zc9mpU08y3np9TH220802cd/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=CGTN+Arabic"},
+    {id:157, name:"Ch4Teen", url:"https://ch14.tv/live/ch4teenclip/playlist.m3u8", category: "kids", logo: "https://via.placeholder.com/150?text=Ch4Teen"},
+    {id:158, name:"Chada TV", url:"https://chadatv.vedge.infomaniak.com/livecast/chadatv/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Chada+TV"},
+    {id:159, name:"Channel 8 Kurdish", url:"https://live.channel8.com/Channel8-Kurdish/index.fmp4.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Channel+8+Kurdish"},
+    {id:160, name:"Charity TV", url:"https://652930de05533.streamlock.net/live/ngrp:livestream_all/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Charity+TV"},
+    {id:161, name:"Chinguit TV", url:"https://dvrfl06.bozztv.com/astv-chinguit/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Chinguit+TV"},
+    {id:162, name:"CNA (Chaîne Nord Africaine)", url:"https://live.creacast.com/cna/smil:cna.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=CNA"},
+    {id:163, name:"CNBC Arabiya", url:"https://cnbc-live.akamaized.net/cnbc/master.m3u8", category: "business", logo: "https://via.placeholder.com/150?text=CNBC+Arabiya"},
+    {id:164, name:"Coptic TV", url:"https://5aafcc5de91f1.streamlock.net/ctvchannel.tv/ctv.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Coptic+TV"},
+    {id:165, name:"Dabanga TV", url:"https://hls.dabangasudan.org/hls/stream.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Dabanga+TV"},
+    {id:166, name:"Dijlah Tarab", url:"https://ghaasiflu.online/tarab/index.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Dijlah+Tarab"},
+    {id:167, name:"Dijlah TV", url:"https://ghaasiflu.online/Dijlah/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Dijlah+TV"},
+    {id:168, name:"DMC", url:"https://bcovlive-a.akamaihd.net/ba3169004d40484b9ff29e194964c9e8/eu-west-1/6057955906001/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=DMC"},
+    {id:169, name:"DMC Drama", url:"https://fl1002.bozztv.com/ga-dmcdrama/index.m3u8", category: "drama", logo: "https://via.placeholder.com/150?text=DMC+Drama"},
+    {id:170, name:"Dubai Racing", url:"https://dmisdracta.cdn.mgmlcdn.com/events/smil:events.stream.smil/chunklist.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Dubai+Racing"},
+    {id:171, name:"Dubai Racing 2", url:"https://dmithrvllta.cdn.mgmlcdn.com/dubairacing/smil:dubairacing.smil/chunklist.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Dubai+Racing2"},
+    {id:172, name:"Dubai Racing 3", url:"https://dmithrvllta.cdn.mgmlcdn.com/dubaimubasher/smil:dubaimubasher.smil/chunklist.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Dubai+Racing3"},
+    {id:173, name:"Dubai Sports 1", url:"https://dmidspta.cdn.mgmlcdn.com/dubaisports/smil:dubaisports.stream.smil/chunklist.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Dubai+Sports1"},
+    {id:174, name:"Dubai Sports 2", url:"https://dmitwlvvll.cdn.mgmlcdn.com/dubaisportshd/smil:dubaisportshd.smil/chunklist.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Dubai+Sports2"},
+    {id:175, name:"Dubai Sports 3", url:"https://dmitwlvvll.cdn.mgmlcdn.com/dubaisportshd5/smil:dubaisportshd5.smil/chunklist.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Dubai+Sports3"},
+    {id:176, name:"Dubai TV", url:"https://dmieigthvllta.cdn.mgmlcdn.com/dubaitvht/smil:dubaitv.stream.smil/chunklist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Dubai+TV"},
+    {id:177, name:"Dubai Zaman", url:"https://dmiffthftl.cdn.mangomolo.com/dubaizaman/smil:dubaizaman.stream.smil/chunklist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Dubai+Zaman"},
+    {id:178, name:"DW Arabic", url:"https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/master.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=DW+Arabic"},
+    {id:179, name:"El Fadjer TV", url:"https://stream.wsla.top/play/1.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=El+Fadjer"},
+    {id:180, name:"El Medina", url:"https://dvrfl06.bozztv.com/astv-elmedina/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=El+Medina"},
+    {id:181, name:"El Mehwar Channel", url:"https://fl1002.bozztv.com/ga-elmehwar/tracks-v1a1/mono.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=El+Mehwar"},
+    {id:182, name:"El Oussra TV", url:"https://dvrfl06.bozztv.com/astv-elousra/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=El+Oussra"},
+    {id:183, name:"El Radio 9090 FM", url:"https://9090video.mobtada.com/hls/stream.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=El+Radio+9090"},
+    {id:184, name:"El Watania 1", url:"https://viamotionhsi.netplus.ch/live/eds/tunisienationale/browser-dash/tunisienationale.mpd", category: "general", logo: "https://via.placeholder.com/150?text=El+Watania+1"},
+    {id:185, name:"Elbeshara GTV", url:"http://media3.smc-host.com:1935/elbesharagtv.com/gtv.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Elbeshara+GTV"},
+    {id:186, name:"Ère TV", url:"https://mn-nl.mncdn.com/awraastv/awraastv_hd.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Ère+TV"},
+    {id:187, name:"ERi-TV 1", url:"https://jmc-live.ercdn.net/eritreatv/eritreatv.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=ERi-TV+1"},
+    {id:188, name:"Fairuz", url:"https://shls-live-enc.edgenextcdn.net/out/v1/bba3ef00b71b470fa955d93a9ca8c277/index.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Fairuz"},
+    {id:189, name:"Fajer TV 1", url:"http://platform.topuphost.com:8577/live/alfajr.stream/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Fajer+TV+1"},
+    {id:190, name:"Fajer TV 2", url:"http://platform.topuphost.com:8577/live/alfajr2.stream/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Fajer+TV+2"},
+    {id:191, name:"Falastini TV", url:"https://rp.tactivemedia.com/palestiniantv_source/live/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Falastini+TV"},
+    {id:192, name:"February Channel", url:"https://b01c02nl.mediatriple.net/videoonlylive/mtfknklgwrlive/broadcast_5dc818c793576.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=February+Channel"},
+    {id:193, name:"France 24 Arabic", url:"https://live.france24.com/hls/live/2037222-b/F24_AR_HI_HLS/master_5000.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=France+24+Arabic"},
+    {id:194, name:"Fujairah TV", url:"https://live.kwikmotion.com/fujairahlive/fujairah.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Fujairah+TV"},
+    {id:195, name:"Future TV", url:"https://live.kwikmotion.com/futurelive/ftv.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Future+TV"},
+    {id:196, name:"Habib TV", url:"https://ncdn.telewebion.com/habib/live/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Habib+TV"},
+    {id:197, name:"Hadi TV Azeri and Russian", url:"https://live.ishiacloud.com/haditv.co.uk/haditv3.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Hadi+TV+Azeri"},
+    {id:198, name:"Hadi TV Hausa", url:"https://live.ishiacloud.com/haditv.co.uk/haditv5.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Hadi+TV+Hausa"},
+    {id:199, name:"Hadi TV Pashto and Persian", url:"https://live.ishiacloud.com/haditv.co.uk/haditv6.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Hadi+TV+Pashto"},
+    {id:200, name:"Hala London", url:"https://halalondon-live.ercdn.net/halalondon/halalondon.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Hala+London"},
+    {id:201, name:"Hala Ramallah", url:"https://halaramallahtv.com:2053/HRamallah-Tv/HalaRamallah/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Hala+Ramallah"},
+    {id:202, name:"Hala TV", url:"https://stream.panet.com/edge/halaTV/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Hala+TV"},
+    {id:203, name:"Helwa TV", url:"https://raw.githubusercontent.com/ipstreet312/freeiptv/master/ressources/dzflix/helwa.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Helwa+TV"},
+    {id:204, name:"Holy Quran Radio Nablus", url:"http://streaming.zaytonatube.com:8080/holyquran/holyquran/video.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Holy+Quran+Radio"},
+    {id:205, name:"I24 News Arabic", url:"https://bcovlive-a.akamaihd.net/95116e8d79524d87bf3ac20ba04241e3/eu-central-1/5377161796001/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=I24+News"},
+    {id:206, name:"iFilm Arabic", url:"https://live.presstv.ir/hls/ifilmar.m3u8", category: "movies", logo: "https://via.placeholder.com/150?text=iFilm+Arabic"},
+    {id:207, name:"Imam Asr TV", url:"https://iptv.imamasrtv.com/asrfa/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Imam+Asr+TV"},
+    {id:208, name:"Imam Hussein TV 2", url:"https://live.imamhossaintv.com/live/ih2.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Imam+Hussein+TV2"},
+    {id:209, name:"iNEWS TV", url:"https://live.i-news.tv/hls/stream.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=iNEWS+TV"},
+    {id:210, name:"Iqraa Africa & Europe", url:"https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv1/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Iqraa+Africa"},
+    {id:211, name:"Iqraa Arabic", url:"https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv3/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Iqraa+Arabic"},
+    {id:212, name:"Iqraa Quran", url:"https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv2/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Iqraa+Quran"},
+    {id:213, name:"Iraq Future", url:"https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_040/Stream/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Iraq+Future"},
+    {id:214, name:"Jawhara TV", url:"http://streaming.toutech.net:1935/live/mp4:jawharafm.sdp/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Jawhara+TV"},
+    {id:215, name:"Jordan Archive", url:"https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Archive/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Jordan+Archive"},
+    {id:216, name:"Jordan Comedy", url:"https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Comedy/playlist.m3u8", category: "comedy", logo: "https://via.placeholder.com/150?text=Jordan+Comedy"},
+    {id:217, name:"Jordan Drama", url:"https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Drama/playlist.m3u8", category: "drama", logo: "https://via.placeholder.com/150?text=Jordan+Drama"},
+    {id:218, name:"Jordan Kitchen", url:"https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/cooking/playlist.m3u8", category: "cooking", logo: "https://via.placeholder.com/150?text=Jordan+Kitchen"},
+    {id:219, name:"Jordan Satellite Channel", url:"https://jrtv-live.ercdn.net/jordanhd/jordanhd.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Jordan+Satellite"},
+    {id:220, name:"Jordan Songs", url:"https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Song/playlist.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Jordan+Songs"},
+    {id:221, name:"Jordan Sport", url:"https://jrtv-live.ercdn.net/jordansporthd/jordansporthd.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Jordan+Sport"},
+    {id:222, name:"Jordan Sport 2", url:"https://jrtv-live.ercdn.net/learning2/learning2.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Jordan+Sport+2"},
+    {id:223, name:"Jordan Tourism", url:"https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Tourism/playlist.m3u8", category: "travel", logo: "https://via.placeholder.com/150?text=Jordan+Tourism"},
+    {id:224, name:"Kaifa TV", url:"http://82.212.74.2:8000/live/7311.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Kaifa+TV"},
+    {id:225, name:"Kolalnas TV", url:"https://htvint.mada.ps/kolalnas/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Kolalnas+TV"},
+    {id:226, name:"Koogi TV", url:"https://5d658d7e9f562.streamlock.net/koogi.tv/koogi.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Koogi+TV"},
+    {id:227, name:"KTV 1", url:"https://kwtktv1ta.cdn.mangomolo.com/ktv1/smil:ktv1.stream.smil/chunklist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=KTV+1"},
+    {id:228, name:"KTV Al Qurain", url:"https://kwtktvaqta.cdn.mangomolo.com/ktvaq/smil:tktvaq.stream.smil/chunklist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=KTV+Al+Qurain"},
+    {id:229, name:"KTV Arabe", url:"https://kwtktvata.cdn.mangomolo.com/ktva/smil:tktva.stream.smil/chunklist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=KTV+Arabe"},
+    {id:230, name:"KTV Ethraa", url:"https://kwtethta.cdn.mangomolo.com/eth/smil:eth.stream.smil/chunklist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=KTV+Ethraa"},
+    {id:231, name:"KTV News", url:"https://kwtkbta.cdn.mangomolo.com/kb/smil:kb.stream.smil/chunklist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=KTV+News"},
+    {id:232, name:"KTV Sport", url:"https://kwtspta.cdn.mangomolo.com/sp/smil:sp.stream.smil/chunklist.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=KTV+Sport"},
+    {id:233, name:"KTV Sport Plus", url:"https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=KTV+Sport+Plus"},
+    {id:234, name:"Kurdistan TV", url:"https://5a3ed7a72ed4b.streamlock.net/live/SMIL:myStream.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Kurdistan+TV"},
+    {id:235, name:"Kurdsat", url:"https://iko-live.akamaized.net/KurdsatTV/master.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Kurdsat"},
+    {id:236, name:"Kurdsat News", url:"https://iko-streamline-live1.akamaized.net/KurdsatNews/master.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Kurdsat+News"},
+    {id:237, name:"LBC", url:"https://rotana.hibridcdn.net/rotananet/lbc_net-7Y83PP5adWixDF93/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=LBC"},
+    {id:238, name:"Libya Al Wataniya", url:"https://cdn-globecast.akamaized.net/live/eds/libya_al_watanya/hls_roku/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Libya+Al+Wataniya"},
+    {id:239, name:"Lighting Lives Blessing Nations TV Arabic (LLBN)", url:"https://brightstar-arabic-pull-secure.akamaized.net/brightstararabic/stream.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=LLBN"},
+    {id:240, name:"Logos TV", url:"https://5a8308add0b31.streamlock.net/logoschannel.com/logostv.smil/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Logos+TV"},
+    {id:241, name:"LoveWorld Arabic", url:"https://go5lm6a6dawb-hls-live.5centscdn.com/lwarabic/53132d996b4263ec0d7b602292c46eaf.sdp/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=LoveWorld+Arabic"},
+    {id:242, name:"LTV", url:"https://p-ltv.akamaized.net/ltv/ltv.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=LTV"},
+    {id:243, name:"M+", url:"https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/m-plus/master.m3u8", category: "movies", logo: "https://via.placeholder.com/150?text=M+"},
+    {id:244, name:"Majid", url:"https://vo-live-media.cdb.cdn.orange.com/Content/Channel/MajidChildrenChannel/HLS/index.m3u8", category: "kids", logo: "https://via.placeholder.com/150?text=Majid"},
+    {id:245, name:"Majid Al Mohandis", url:"https://shls-live-mood-ak.akamaized.net/out/v1/8e2419c6c7494dbba478be025af490ee/index.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Majid+Al+Mohandis"},
+    {id:246, name:"Makan 33", url:"https://makan.media.kan.org.il/hls/live/2024680/2024680/master.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Makan+33"},
+    {id:247, name:"Makkah TV", url:"https://media2.streambrothers.com:1936/8122/8122/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Makkah+TV"},
+    {id:248, name:"Maraya", url:"https://shls-live-enc.edgenextcdn.net/out/v1/a4a39d8e92e34b0780ca602270a59512/index.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Maraya"},
+    {id:249, name:"Marina TV", url:"https://ffs.gulfsat.com/Marina-TV-HD/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Marina+TV"},
+    {id:250, name:"Marjaeyat TV Arabic", url:"https://livefa.marjaeyattv.com/mtv_ar/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Marjaeyat+TV"},
+    {id:251, name:"MBC 1", url:"https://mbc1-enc.edgenextcdn.net/out/v1/0965e4d7deae49179172426cbfb3bc5e/index.m3u8", category: "entertainment", logo: "https://via.placeholder.com/150?text=MBC+1"},
+    {id:252, name:"MBC 1 USA", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1-usa/fdac3a4fc0473f1f56e07ec1d63a4b7b/index.m3u8", category: "entertainment", logo: "https://via.placeholder.com/150?text=MBC+1+USA"},
+    {id:253, name:"MBC 2", url:"http://213.57.91.138:8000/play/a05k", category: "movies", logo: "https://via.placeholder.com/150?text=MBC+2"},
+    {id:254, name:"MBC 3 USA", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-3-usa/5d58265a862a476dc7f97694addb5ded/index.m3u8", category: "kids", logo: "https://via.placeholder.com/150?text=MBC+3+USA"},
+    {id:255, name:"MBC 4", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-4/24f134f1cd63db9346439e96b86ca6ed/index.m3u8", category: "entertainment", logo: "https://via.placeholder.com/150?text=MBC+4"},
+    {id:256, name:"MBC 5", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8", category: "entertainment", logo: "https://via.placeholder.com/150?text=MBC+5"},
+    {id:257, name:"MBC Action", url:"http://213.57.91.138:8000/play/a05l", category: "entertainment", logo: "https://via.placeholder.com/150?text=MBC+Action"},
+    {id:258, name:"MBC Bollywood", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb40d7dcf9a209255dd2496903764/index.m3u8", category: "movies", logo: "https://via.placeholder.com/150?text=MBC+Bollywood"},
+    {id:259, name:"MBC Drama KSA", url:"https://mbc1-enc.edgenextcdn.net/out/v1/b0b3a0e6750d4408bb86d703d5feffd1/index.m3u8", category: "drama", logo: "https://via.placeholder.com/150?text=MBC+Drama+KSA"},
+    {id:260, name:"MBC Drama USA", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-drama-usa/ea2f5db904aff224b7066e59c7f585a2/index.m3u8", category: "drama", logo: "https://via.placeholder.com/150?text=MBC+Drama+USA"},
+    {id:261, name:"MBC Iraq", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-iraq/e38c44b1b43474e1c39cb5b90203691e/index.m3u8", category: "entertainment", logo: "https://via.placeholder.com/150?text=MBC+Iraq"},
+    {id:262, name:"MBC Masr", url:"https://mbc1-enc.edgenextcdn.net/out/v1/d5036cabf11e45bf9d0db410ca135c18/index.m3u8", category: "entertainment", logo: "https://via.placeholder.com/150?text=MBC+Masr"},
+    {id:263, name:"MBC Masr 2", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-2/754931856515075b0aabf0e583495c68/index.m3u8", category: "entertainment", logo: "https://via.placeholder.com/150?text=MBC+Masr+2"},
+    {id:264, name:"MBC Masr Drama", url:"https://shls-live-enc.edgenextcdn.net/out/v1/08eca926a78a41339b8010c882410307/index.m3u8", category: "drama", logo: "https://via.placeholder.com/150?text=MBC+Masr+Drama"},
+    {id:265, name:"MBC Masr USA", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-usa/cd8d40acdab28aac0582faa3bd3983f1/index.m3u8", category: "entertainment", logo: "https://via.placeholder.com/150?text=MBC+Masr+USA"},
+    {id:266, name:"MBC+ Drama", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-plus-drama/e37251ec2aac8f6c98f75cd0fa37cd28/index.m3u8", category: "drama", logo: "https://via.placeholder.com/150?text=MBC+Drama+"},
+    {id:267, name:"Medi 1 TV Arabic", url:"https://streaming1.medi1tv.com/live/smil:medi1ar.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Medi+1+TV+Arabic"},
+    {id:268, name:"Medi 1 TV Maghreb", url:"https://streaming1.medi1tv.com/live/smil:medi1tv.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Medi+1+TV+Maghreb"},
+    {id:269, name:"Mekameleen TV", url:"https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Mekameleen+TV"},
+    {id:270, name:"Melody FM Jordan", url:"https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Melody+FM+Jordan"},
+    {id:271, name:"Miracle Channel", url:"https://miracle.stream.boxigy.com/hls/miracle1.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Miracle+Channel"},
+    {id:272, name:"Miracle TV", url:"https://live.miraclechannel.com/hls/miracle1.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Miracle+TV"},
+    {id:273, name:"Mohammed Abdo", url:"https://d2ow8h651gs7dx.cloudfront.net/out/v1/371fb663da604e659a2fb99bf89d92d4/index.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Mohammed+Abdo"},
+    {id:274, name:"Mosaique FM", url:"https://cdn.live.easybroadcast.io/abr_corp/63_mosaique-fm_rn56tgl/playlist_dvr.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Mosaique+FM"},
+    {id:275, name:"Movies Action", url:"https://shls-live-enc.edgenextcdn.net/out/v1/46079e838e65490c8299f902a7731168/index.m3u8", category: "movies", logo: "https://via.placeholder.com/150?text=Movies+Action"},
+    {id:276, name:"Movies Thriller", url:"https://shls-live-enc.edgenextcdn.net/out/v1/f6d718e841f8442f8374de47f18c93a7/index.m3u8", category: "movies", logo: "https://via.placeholder.com/150?text=Movies+Thriller"},
+    {id:277, name:"MTA1 World", url:"https://chlivemta1.akamaized.net/hls/live/2008145/mta1/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=MTA1+World"},
+    {id:278, name:"MTA2 Europe", url:"https://chlivemta1.akamaized.net/hls/live/2008145/mta2/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=MTA2+Europe"},
+    {id:279, name:"MTA3 Al-Arabia", url:"https://chlivemta1.akamaized.net/hls/live/2010556/mta3alarabia/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=MTA3+Al-Arabia"},
+    {id:280, name:"MTA6 Asia", url:"https://livemtaasia.akamaized.net/hls/live/2039224/mta6asia/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=MTA6+Asia"},
+    {id:281, name:"MTA7 Asia", url:"https://livemtaasia.akamaized.net/hls/live/2039224/mtaasia2/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=MTA7+Asia"},
+    {id:282, name:"MTV", url:"https://hms.pfs.gdn/v1/broadcast/mtv/playlist.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=MTV"},
+    {id:283, name:"MusawaChannel", url:"https://pbc.furrera.ps/musawahd/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=MusawaChannel"},
+    {id:284, name:"Nabaa TV", url:"http://31.14.40.237:1935/live/Nabaa/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Nabaa+TV"},
+    {id:285, name:"Nablus TV", url:"https://htvint.mada.ps/nabluslive/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Nablus+TV"},
+    {id:286, name:"National Geographic Abu Dhabi", url:"https://vo-live.cdb.cdn.orange.com/Content/Channel/NationalGeographicHDChannel/HLS/index.m3u8", category: "documentary", logo: "https://via.placeholder.com/150?text=Nat+Geo+Abu+Dhabi"},
+    {id:287, name:"National Geographic Abu Dhabi HD", url:"http://213.57.91.138:8000/play/a05a", category: "documentary", logo: "https://via.placeholder.com/150?text=Nat+Geo+Abu+Dhabi+HD"},
+    {id:288, name:"NBN", url:"http://5.9.119.146:8883/nbn/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=NBN"},
+    {id:289, name:"Nessma El Jadida", url:"https://fl1002.bozztv.com/ga-nessmatv/tracks-v1a1/mono.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Nessma+El+Jadida"},
+    {id:290, name:"Nidae AlIslam Radio", url:"https://live.kwikmotion.com/sbrksanedaradiolive/srpksanedaradio/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Nidae+AlIslam+Radio"},
+    {id:291, name:"NogoumFMTV", url:"https://nogoumtv.nrpstream.com/hls/stream.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=NogoumFMTV"},
+    {id:292, name:"Noor Dubai", url:"https://dmiffthftl.cdn.mangomolo.com/noordubaitv/smil:noordubaitv.smil/chunklist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Noor+Dubai"},
+    {id:293, name:"Nour Al Koddas", url:"https://svs.itworkscdn.net/nour1satlive/livestream/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Nour+Al+Koddas"},
+    {id:294, name:"Nour Al Sharq", url:"https://svs.itworkscdn.net/nour8satlive/livestream/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Nour+Al+Sharq"},
+    {id:295, name:"Nour El Shabeb", url:"https://svs.itworkscdn.net/nour3satlive/livestream/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Nour+El+Shabeb"},
+    {id:296, name:"Nour Mariam", url:"https://svs.itworkscdn.net/nour9satlive/livestream/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Nour+Mariam"},
+    {id:297, name:"NourSAT", url:"https://svs.itworkscdn.net/nour4satlive/livestream/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=NourSAT"},
+    {id:298, name:"Oman Althakafia", url:"https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8", category: "cultural", logo: "https://via.placeholder.com/150?text=Oman+Althakafia"},
+    {id:299, name:"Oman Mubashir", url:"https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Oman+Mubashir"},
+    {id:300, name:"Oman Sports TV", url:"https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Oman+Sports+TV"},
+    {id:301, name:"Oman TV", url:"https://partneta.cdn.mgmlcdn.com/omantv/smil:omantv.stream.smil/chunklist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Oman+TV"},
+    {id:302, name:"On E", url:"https://bcovlive-a.akamaihd.net/3dc60bab470f4c9fbf00408ecb7c3d7a/eu-west-1/6057955906001/playlist_dvr.m3u8", category: "entertainment", logo: "https://via.placeholder.com/150?text=On+E"},
+    {id:303, name:"One TV", url:"https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=One+TV"},
+    {id:304, name:"OneFM", url:"https://hms.pfs.gdn/v1/broadcast/onefm/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=OneFM"},
+    {id:305, name:"OTV", url:"https://fl1002.bozztv.com/ga-otvlebanon/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=OTV"},
+    {id:306, name:"Palestine", url:"https://ncdn.telewebion.com/palestine/live/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Palestine"},
+    {id:307, name:"Palestine Al Yawm", url:"https://live.paltodaytv.com/paltv/live/playlist_sfm4s.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Palestine+Al+Yawm"},
+    {id:308, name:"Palestine Edu", url:"https://pbc.furrera.ps/PalestineEDU/index.m3u8", category: "educational", logo: "https://via.placeholder.com/150?text=Palestine+Edu"},
+    {id:309, name:"Palestine Mubasher", url:"https://pbc.furrera.ps/palestinelivehd/index.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Palestine+Mubasher"},
+    {id:310, name:"Palestine Satellite Channel", url:"https://pbc.furrera.ps/palestinehd/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Palestine+Satellite"},
+    {id:311, name:"Palestine Today", url:"https://live.paltodaytv.com/paltv/live/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Palestine+Today"},
+    {id:312, name:"Panorama FM", url:"https://d6izdil55uftn.cloudfront.net/out/v1/0a06d1d6377c47edbd48721ed724bd08/index.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Panorama+FM"},
+    {id:313, name:"PNC Drama", url:"https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/pnc-drama/master.m3u8", category: "drama", logo: "https://via.placeholder.com/150?text=PNC+Drama"},
+    {id:314, name:"Pulse95 Radio", url:"https://svs.itworkscdn.net/pulse95live/pulse96/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Pulse95+Radio"},
+    {id:315, name:"Qaf TV", url:"https://customer-9vqui33qma2rownb.cloudflarestream.com/7792e558fe54e23bdd4b462ec275cdba/manifest/video.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Qaf+TV"},
+    {id:316, name:"Quran Radio", url:"https://live.kwikmotion.com/sbrksaquranradiolive/srpksaquranradio/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Quran+Radio"},
+    {id:317, name:"Rabeh Saqer", url:"https://shls-live-enc.edgenextcdn.net/out/v1/ea4275b6dc0840c198c17f6dc6f1ec49/index.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Rabeh+Saqer"},
+    {id:318, name:"Radio Albalad TV", url:"http://streaming.zaytonatube.com:8080/radioalbalad/radioalbalad/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Radio+Albalad+TV"},
+    {id:319, name:"Radio Fann Jordan Studio", url:"http://45.63.116.205/hls2/stream1.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Radio+Fann+Jordan"},
+    {id:320, name:"Radio Yaqeen Jordan City View", url:"http://45.63.116.205/hls4/stream1.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Radio+Yaqeen+Jordan"},
+    {id:321, name:"Rajeen TV", url:"https://mn-nl.mncdn.com/palabroad/live/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Rajeen+TV"},
+    {id:322, name:"RASD TV", url:"https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=12830", category: "news", logo: "https://via.placeholder.com/150?text=RASD+TV"},
+    {id:323, name:"Rashid AlMajed", url:"https://dphwv2ufgnfsq.cloudfront.net/out/v1/59cd80dfe93a479eb8b4d79bc6f225ca/index.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Rashid+AlMajed"},
+    {id:324, name:"Raya 1", url:"https://htvmada.mada.ps:4443/raya/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Raya+1"},
+    {id:325, name:"Red TV Lebanon", url:"https://live.kwikmotion.com/redtvlive/redtv.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Red+TV+Lebanon"},
+    {id:326, name:"Rotana Aflam+", url:"https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/rotana-aflam-plus/master.m3u8", category: "movies", logo: "https://via.placeholder.com/150?text=Rotana+Aflam+"},
+    {id:327, name:"Rotana Cinema Egypt", url:"https://rotana.hibridcdn.net/rotananet/cinemamasr_net-7Y83PP5adWixDF93/playlist.m3u8", category: "movies", logo: "https://via.placeholder.com/150?text=Rotana+Cinema+Egypt"},
+    {id:328, name:"Rotana Cinema KSA", url:"https://bcovlive-a.akamaihd.net/9527a892aeaf43019fd9eeb77ad1516e/eu-central-1/6057955906001/playlist.m3u8", category: "movies", logo: "https://via.placeholder.com/150?text=Rotana+Cinema+KSA"},
+    {id:329, name:"Rotana Classic", url:"https://bcovlive-a.akamaihd.net/0debf5648e584e5fb795c3611c5c0252/eu-central-1/6057955906001/playlist.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Rotana+Classic"},
+    {id:330, name:"Rotana Clip", url:"https://rotana.hibridcdn.net/rotananet/clip_net-7Y83PP5adWixDF93/playlist.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Rotana+Clip"},
+    {id:331, name:"Rotana Comedy", url:"https://rotana.hibridcdn.net/rotananet/comedy_net-7Y83PP5adWixDF93/playlist.m3u8", category: "comedy", logo: "https://via.placeholder.com/150?text=Rotana+Comedy"},
+    {id:332, name:"Rotana Drama", url:"https://rotana.hibridcdn.net/rotananet/drama_net-7Y83PP5adWixDF93/playlist.m3u8", category: "drama", logo: "https://via.placeholder.com/150?text=Rotana+Drama"},
+    {id:333, name:"Rotana FM KSA", url:"rtmp://live.restream.io/pull/play_320121_94512612fd0e084bd284", category: "radio", logo: "https://via.placeholder.com/150?text=Rotana+FM+KSA"},
+    {id:334, name:"Rotana Khalijia", url:"https://rotana.hibridcdn.net/rotananet/khaleejiya_net-7Y83PP5adWixDF93/playlist.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Rotana+Khalijia"},
+    {id:335, name:"Rotana Music", url:"https://rotana.hibridcdn.net/rotananet/music_net-7Y83PP5adWixDF93/playlist.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Rotana+Music"},
+    {id:336, name:"Rotana Radio Jordan Studio", url:"http://45.63.116.205/hls/stream1.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Rotana+Radio+Jordan"},
+    {id:337, name:"Rotana Tarab Jordan City View", url:"http://45.63.116.205/hls3/stream1.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Rotana+Tarab+Jordan"},
+    {id:338, name:"Roya Comedy", url:"https://playlist.fasttvcdn.com/pl/toa2uuhhygheuly7xtuqrg/roya-comedy/playlist.m3u8", category: "comedy", logo: "https://via.placeholder.com/150?text=Roya+Comedy"},
+    {id:339, name:"Roya Drama", url:"https://playlist.fasttvcdn.com/pl/a2le4pbpa6rpzv147haf4w/drama/playlist.m3u8", category: "drama", logo: "https://via.placeholder.com/150?text=Roya+Drama"},
+    {id:340, name:"Roya Kids", url:"https://playlist.fasttvcdn.com/pl/ptllxjd03j6g9oxxjdfapg/roya-kids/playlist.m3u8", category: "kids", logo: "https://via.placeholder.com/150?text=Roya+Kids"},
+    {id:341, name:"Roya Kids Originals", url:"https://playlist.fasttvcdn.com/pl/ptllxjd03j6g9oxxjdfapg/roya-kids-originals/playlist.m3u8", category: "kids", logo: "https://via.placeholder.com/150?text=Roya+Kids+Originals"},
+    {id:342, name:"Roya Kitchen", url:"https://playlist.fasttvcdn.com/pl/toa2uuhhygheuly7xtuqrg/roya-kitchen/playlist.m3u8", category: "cooking", logo: "https://via.placeholder.com/150?text=Roya+Kitchen"},
+    {id:343, name:"Roya TV", url:"https://royatv-live.daioncdn.net/royatv/royatv.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Roya+TV"},
+    {id:344, name:"RT Arabic", url:"https://rt-arb.rttv.com/dvr/rtarab/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=RT+Arabic"},
+    {id:345, name:"RTD 4", url:"http://dvrfl05.bozztv.com/gin-rtddjibouti/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=RTD+4"},
+    {id:346, name:"Sada-E-Haq TV", url:"https://live.relentlessinnovations.net:1936/sadaehaq/sadaehaq/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Sada-E-Haq+TV"},
+    {id:347, name:"Safeer TV", url:"https://cdn3.wowza.com/1/YStGZlJRdktzZkdK/VXROZWNW/hls/live/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Safeer+TV"},
+    {id:348, name:"Sama Dubai", url:"https://dmieigthvllta.cdn.mgmlcdn.com/samadubaiht/smil:samadubai.stream.smil/chunklist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Sama+Dubai"},
+    {id:349, name:"Sat 7 Arabic", url:"https://svs.itworkscdn.net/sat7arabiclive/sat7arabic.smil/playlist_dvr.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Sat+7+Arabic"},
+    {id:350, name:"Sat 7 Kids", url:"https://svs.itworkscdn.net/sat7kidslive/sat7kids.smil/playlist_dvr.m3u8", category: "kids", logo: "https://via.placeholder.com/150?text=Sat+7+Kids"},
+    {id:351, name:"Saudi Thaqafiya TV", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-thaqafeyyah/28c0d2a20dbf1dc049ce15d3973f494b/index.m3u8", category: "cultural", logo: "https://via.placeholder.com/150?text=Saudi+Thaqafiya"},
+    {id:352, name:"Saudia Radio", url:"https://live.kwikmotion.com/sbrksasaudiaradiolive/srpksasaudiaradio/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Saudia+Radio"},
+    {id:353, name:"SBC", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-sbc/90e09c0c28db26435799b4a14892a167/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=SBC"},
+    {id:354, name:"Senses TV", url:"https://sensestv.com:4433/hls/sensesonline/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Senses+TV"},
+    {id:355, name:"Shabab FM", url:"https://streaming.zaytonatube.com:8081/ShababFM/shabab/index.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Shabab+FM"},
+    {id:356, name:"Shams TV", url:"https://stream.shams.tv/hls/stream.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Shams+TV"},
+    {id:357, name:"Sharjah 2", url:"https://svs.itworkscdn.net/smc2live/smc2tv.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Sharjah+2"},
+    {id:358, name:"Sharjah Radio", url:"https://svs.itworkscdn.net/smcradiolive/smcradiolive/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Sharjah+Radio"},
+    {id:359, name:"Sharjah Radio Quran", url:"https://live.kwikmotion.com/smcquranlive/quranradiolive/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Sharjah+Radio+Quran"},
+    {id:360, name:"Sharjah Sports", url:"https://svs.itworkscdn.net/smc4sportslive/smc4.smil/playlist.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Sharjah+Sports"},
+    {id:361, name:"Sharjah TV", url:"https://svs.itworkscdn.net/smc1live/smc1.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Sharjah+TV"},
+    {id:362, name:"Sky News Arabia", url:"https://stream.skynewsarabia.com/ott/ott.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Sky+News+Arabia"},
+    {id:363, name:"Sky News Arabia (Portrait)", url:"https://stream.skynewsarabia.com/vertical/vertical.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Sky+News+Portrait"},
+    {id:364, name:"Spacetoon Arabic", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-spacetoon/d8382fb9ab4b2307058f12c7ea90db54/index.m3u8", category: "kids", logo: "https://via.placeholder.com/150?text=Spacetoon+Arabic"},
+    {id:365, name:"StoryChannel TV", url:"https://136044159.r.cdnsun.net/storychannel.m3u8", category: "entertainment", logo: "https://via.placeholder.com/150?text=StoryChannel+TV"},
+    {id:366, name:"Sudan TV", url:"https://cdn-globecast.akamaized.net/live/eds/sudan_tv/hls_roku/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Sudan+TV"},
+    {id:367, name:"Syria TV", url:"https://live.kwikmotion.com/syriatvlive/syriatv.smil/playlist_dvr.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Syria+TV"},
+    {id:368, name:"Taha TV", url:"https://media1.livaat.com/static/TAHA_TV/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Taha+TV"},
+    {id:369, name:"Takbeer TV", url:"https://ap02.iqplay.tv:8082/iqb8002/t5kb86/playlist.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Takbeer+TV"},
+    {id:370, name:"Tanasuh TV", url:"https://kilolink.pulsarstarsolutions.com/live/smil:tanasuhtv.smil/manifest.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=Tanasuh+TV"},
+    {id:371, name:"Tarab", url:"https://shls-live-enc.edgenextcdn.net/out/v1/90143f040feb40589d18c57863d9e829/index.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Tarab"},
+    {id:372, name:"Tele Liban", url:"https://cdn.catiacast.video/abr/ed8f807e2548db4507d2a6f4ba0c4a06/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Tele+Liban"},
+    {id:373, name:"Tele Tchad", url:"https://strhlslb01.streamakaci.tv/str_tchad_tchad/str_tchad_multi/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Tele+Tchad"},
+    {id:374, name:"TRT Arabi", url:"https://tv-trtarabi.medya.trt.com.tr/master.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=TRT+Arabi"},
+    {id:375, name:"Türkmenistan", url:"https://alpha.tv.online.tm/hls/ch007.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Türkmenistan"},
+    {id:376, name:"Turksat Tanitim", url:"http://185.234.111.229:8000/play/a01d", category: "general", logo: "https://via.placeholder.com/150?text=Turksat+Tanitim"},
+    {id:377, name:"TV1 Algerian Television", url:"http://149.62.177.98:8000/play/a00i/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=TV1+Algeria"},
+    {id:378, name:"TV2", url:"https://viamotionhsi.netplus.ch/live/eds/canalalgerie/browser-dash/canalalgerie.mpd", category: "general", logo: "https://via.placeholder.com/150?text=TV2+Algeria"},
+    {id:379, name:"TV3 Algeria", url:"http://149.62.177.98:8000/play/a01z/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=TV3+Algeria"},
+    {id:380, name:"TV5 Coran TV", url:"http://149.62.177.98:8000/play/a01u/index.m3u8", category: "religious", logo: "https://via.placeholder.com/150?text=TV5+Coran"},
+    {id:381, name:"TV6 E-shababiya", url:"http://149.62.177.98:8000/play/a01v/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=TV6+E-shababiya"},
+    {id:382, name:"TV7 El maarifa TV", url:"http://149.62.177.98:8000/play/a01w/index.m3u8", category: "educational", logo: "https://via.placeholder.com/150?text=TV7+El+maarifa"},
+    {id:383, name:"TV8 El-Dhakira TV", url:"http://149.62.177.98:8000/play/a01x/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=TV8+El-Dhakira"},
+    {id:384, name:"TV9 El-Barlamaniya", url:"http://149.62.177.98:8000/play/a01y/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=TV9+El-Barlamaniya"},
+    {id:385, name:"UNews", url:"https://cdn.catiacast.video/abr/9436b5ab3c1171ab04a59af11951292f/playlist.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=UNews"},
+    {id:386, name:"UTV", url:"https://mn-nl.mncdn.com/utviraqi2/64c80359/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=UTV"},
+    {id:387, name:"Voice of Lebanon", url:"https://svs.itworkscdn.net/vdltvlive/vdltv.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Voice+of+Lebanon"},
+    {id:388, name:"Wanasah", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-wanasah/13e82ea6232fa647c43b26e8a41f173d/index.m3u8", category: "music", logo: "https://via.placeholder.com/150?text=Wanasah"},
+    {id:389, name:"Wasat TV", url:"https://alwasattv.hibridcdn.net/alwasattv/alwasat_abr/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Wasat+TV"},
+    {id:390, name:"Watan TV", url:"https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Watan+TV"},
+    {id:391, name:"Watar Radio", url:"https://svs.itworkscdn.net/smcwatarlive/smcwatar/playlist.m3u8", category: "radio", logo: "https://via.placeholder.com/150?text=Watar+Radio"},
+    {id:392, name:"Watar TV", url:"http://htvint.mada.ps:8889/orient/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Watar+TV"},
+    {id:393, name:"Welat TV", url:"http://stream.welattv.net:1935/welat/tv/.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Welat+TV"},
+    {id:394, name:"Yas TV", url:"https://vo-live-media.cdb.cdn.orange.com/Content/Channel/YASSportsChannel/HLS/index.m3u8", category: "sports", logo: "https://via.placeholder.com/150?text=Yas+TV"},
+    {id:395, name:"Yemen Shabab Channel", url:"https://starmenajo.com/hls/yemenshabab/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Yemen+Shabab"},
+    {id:396, name:"Yemen Today TV", url:"https://video.yementdy.tv/hls/yementoday.m3u8", category: "news", logo: "https://via.placeholder.com/150?text=Yemen+Today+TV"},
+    {id:397, name:"Zagros", url:"https://5a3ed7a72ed4b.streamlock.net/zagrostv/SMIL:myStream.smil/playlist.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Zagros"},
+    {id:398, name:"Zarin TV", url:"https://fl1002.bozztv.com/gf-zarintv/index.m3u8", category: "general", logo: "https://via.placeholder.com/150?text=Zarin+TV"},
+    {id:399, name:"Alkass Five", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass5azq/master.m3u8", category: "sports", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Alkass_logo.png"},
+    {id:400, name:"Alkass Four", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass4azq/master.m3u8", category: "sports", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Alkass_logo.png"},
+    {id:401, name:"Alkass One", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass1muytrdc/master.m3u8", category: "sports", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Alkass_logo.png"},
+    {id:402, name:"Alkass SHOOF", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass6Shoof1ab/master.m3u8", category: "sports", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Alkass_logo.png"},
+    {id:403, name:"Alkass Six", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass6buzay/master.m3u8", category: "sports", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Alkass_logo.png"},
+    {id:404, name:"Alkass Three", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass3vakazq/master.m3u8", category: "sports", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Alkass_logo.png"},
+    {id:405, name:"Alkass Two", url:"https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass2hefazq/master.m3u8", category: "sports", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Alkass_logo.png"}
+];
+
+let currentHls = null;
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+let isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+// عرض القنوات في الشبكة المحسنة
+function displayChannels() {
+    const container = document.getElementById('channelsList');
+    const searchTerm = document.getElementById('channelSearch').value.toLowerCase();
+    
+    const filteredChannels = channels.filter(channel => 
+        channel.name.toLowerCase().includes(searchTerm) ||
+        channel.group.toLowerCase().includes(searchTerm)
+    );
+
+    container.innerHTML = '';
+
+    filteredChannels.forEach((channel) => {
+        const channelCard = document.createElement('div');
+        channelCard.className = 'channel-card fade-in';
+        channelCard.innerHTML = `
+            <div class="channel-card-header">
+                <div class="channel-logo">
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                <div class="channel-details">
+                    <div class="channel-name">${channel.name}</div>
+                    <div class="channel-meta">
+                        <span class="channel-group">${channel.category}</span>
+                        <span><i class="fas fa-hd-video"></i> HD</span>
                     </div>
-                    <div style="font-size: 1.1em; font-weight: bold; margin-bottom: 10px; color: #ffd700;">${channel.name}</div>
-                    <button class="play-btn" onclick="openChannel('${channel.url}', '${channel.name}')">
-                        ▶ فتح القناة
-                    </button>
-                `;
-                container.appendChild(channelCard);
+                </div>
+            </div>
+            <div class="channel-actions">
+                <button class="play-btn" onclick="playChannel('${channel.url}', '${channel.name}')">
+                    <i class="fas fa-play"></i> تشغيل
+                </button>
+                <button class="copy-btn" onclick="copyChannelUrl('${channel.url}', '${channel.name}')" title="نسخ الرابط">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+        `;
+        container.appendChild(channelCard);
+    });
+
+    document.getElementById('channelCount').textContent = `(${filteredChannels.length})`;
+    
+    // عرض القنوات في الأقسام الأصلية أيضاً
+    renderOriginalChannels();
+}
+
+// عرض القنوات في الأقسام الأصلية
+function renderOriginalChannels() {
+    const sportsChannels = document.getElementById("sports-channels");
+    const newsChannels = document.getElementById("news-channels");
+    const generalChannels = document.getElementById("general-channels");
+    
+    sportsChannels.innerHTML = "";
+    newsChannels.innerHTML = "";
+    generalChannels.innerHTML = "";
+    
+    channels.forEach(channel => {
+        const isActive = channel.id === currentChannel?.id;
+        const isFavorite = favorites.includes(channel.id);
+        
+        const channelElement = document.createElement("div");
+        channelElement.className = `channel ${isActive ? 'active' : ''}`;
+        
+        channelElement.innerHTML = `
+            ${isActive ? '<div class="channel-live-badge">LIVE</div>' : ''}
+            <button class="channel-favorite ${isFavorite ? 'active' : ''}" data-id="${channel.id}">
+                <i class="fas ${isFavorite ? 'fa-heart' : 'fa-heart'}"></i>
+            </button>
+            <img src="${channel.logo}" alt="${channel.name}" onerror="this.src='https://via.placeholder.com/150?text=TV'">
+            <h3>${channel.name}</h3>
+            <button onclick="playChannel('${channel.url}', '${channel.name}')">📡 شاهد الآن</button>
+        `;
+        
+        if (channel.category === "sports") {
+            sportsChannels.appendChild(channelElement);
+        } else if (channel.category === "news") {
+            newsChannels.appendChild(channelElement);
+        } else {
+            generalChannels.appendChild(channelElement);
+        }
+        
+        const favoriteBtn = channelElement.querySelector('.channel-favorite');
+        favoriteBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFavorite(channel.id);
+        });
+    });
+}
+
+// تشغيل القناة
+function playChannel(url, name) {
+    const videoPlayer = document.getElementById('videoPlayer');
+    const noPlayer = document.getElementById('noPlayer');
+    const currentChannel = document.getElementById('currentChannel');
+    const currentChannelName = document.getElementById('currentChannelName');
+    const currentChannelStatus = document.getElementById('currentChannelStatus');
+
+    noPlayer.style.display = 'none';
+    videoPlayer.style.display = 'block';
+    currentChannel.style.display = 'flex';
+    
+    currentChannelName.textContent = name;
+    currentChannelStatus.textContent = 'جاري التحميل...';
+    currentChannelStatus.style.color = '#ffa500';
+
+    // إيقاف التشغيل السابق
+    if (currentHls) {
+        currentHls.destroy();
+    }
+
+    videoPlayer.src = '';
+    videoPlayer.load();
+
+    if (url.includes('.m3u8')) {
+        if (window.Hls && Hls.isSupported()) {
+            currentHls = new Hls({
+                enableWorker: false,
+                lowLatencyMode: true,
+                backBufferLength: 90
+            });
+            
+            currentHls.loadSource(url);
+            currentHls.attachMedia(videoPlayer);
+            
+            currentHls.on(Hls.Events.MANIFEST_PARSED, function() {
+                currentChannelStatus.textContent = '🔴 بث مباشر - جاري التشغيل';
+                currentChannelStatus.style.color = '#4caf50';
+                videoPlayer.play().catch(e => {
+                    currentChannelStatus.textContent = '⚠️ اضغط تشغيل يدوياً';
+                    currentChannelStatus.style.color = '#ffa500';
+                });
+            });
+            
+        } else if (videoPlayer.canPlayType('application/vnd.apple.mpegurl')) {
+            videoPlayer.src = url;
+            videoPlayer.addEventListener('loadedmetadata', function() {
+                currentChannelStatus.textContent = '🔴 بث مباشر - جاري التشغيل';
+                currentChannelStatus.style.color = '#4caf50';
+                videoPlayer.play().catch(e => {
+                    currentChannelStatus.textContent = '⚠️ اضغط تشغيل يدوياً';
+                    currentChannelStatus.style.color = '#ffa500';
+                });
             });
         }
+    } else {
+        videoPlayer.src = url;
+        videoPlayer.play().catch(e => {
+            currentChannelStatus.textContent = '⚠️ اضغط تشغيل يدوياً';
+            currentChannelStatus.style.color = '#ffa500';
+        });
+    }
 
-        function openChannel(url, name) {
-            // إنشاء صفحة مشغل منفصلة
-            const playerWindow = window.open('', `player_${name}`, 'width=1000,height=600,scrollbars=yes');
-            
-            const playerHTML = `
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <title>${name}</title>
-                    <meta charset="UTF-8">
-                    <style>
-                        body { 
-                            margin: 0; 
-                            padding: 20px; 
-                            background: #1a1a1a; 
-                            color: white; 
-                            font-family: Arial; 
-                            text-align: center;
-                        }
-                        .container { max-width: 900px; margin: 0 auto; }
-                        video { width: 100%; max-width: 800px; height: 450px; background: black; border-radius: 10px; }
-                        .controls { margin: 20px 0; }
-                        button { background: #ff4081; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px; }
-                        .status { margin: 10px 0; padding: 10px; border-radius: 5px; }
-                    </style>
-                </head>
-                <body>
-                    <div class="container">
-                        <h1>${name}</h1>
-                        <div class="status" id="status">جاري التحميل...</div>
-                        <video id="videoPlayer" controls></video>
-                        <div class="controls">
-                            <button onclick="window.location.reload()">🔄 إعادة تحميل</button>
-                            <button onclick="window.close()">❌ إغلاق</button>
-                        </div>
-                    </div>
-                    
-                    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"><\/script>
-                    <script>
-                        const video = document.getElementById('videoPlayer');
-                        const status = document.getElementById('status');
-                        
-                        function playStream() {
-                            const streamUrl = '${url}';
-                            
-                            if (Hls.isSupported()) {
-                                const hls = new Hls({
-                                    enableWorker: false,
-                                    lowLatencyMode: true,
-                                    backBufferLength: 90
-                                });
-                                
-                                hls.loadSource(streamUrl);
-                                hls.attachMedia(video);
-                                
-                                hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                                    status.innerHTML = '✅ جاهز للبث - جاري التشغيل...';
-                                    status.style.background = '#4caf50';
-                                    video.play().catch(e => {
-                                        status.innerHTML = '⚠️ اضغط تشغيل يدوياً';
-                                        status.style.background = '#ff9800';
-                                    });
-                                });
-                                
-                                hls.on(Hls.Events.ERROR, function(event, data) {
-                                    console.error('HLS error:', data);
-                                    status.innerHTML = '❌ خطأ في البث - جرب إعادة التحميل';
-                                    status.style.background = '#f44336';
-                                });
-                                
-                            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                                video.src = streamUrl;
-                                video.addEventListener('loadedmetadata', function() {
-                                    status.innerHTML = '✅ جاهز للبث - جاري التشغيل...';
-                                    status.style.background = '#4caf50';
-                                    video.play().catch(e => {
-                                        status.innerHTML = '⚠️ اضغط تشغيل يدوياً';
-                                        status.style.background = '#ff9800';
-                                    });
-                                });
-                            } else {
-                                status.innerHTML = '❌ المتصفح لا يدعم HLS Streaming';
-                                status.style.background = '#f44336';
-                            }
-                            
-                            video.onerror = function() {
-                                status.innerHTML = '❌ خطأ في تحميل الفيديو';
-                                status.style.background = '#f44336';
-                            };
-                        }
-                        
-                        // بدء التشغيل عند تحميل الصفحة
-                        document.addEventListener('DOMContentLoaded', playStream);
-                    <\/script>
-                </body>
-                </html>
-            `;
-            
-            playerWindow.document.write(playerHTML);
-            playerWindow.document.close();
-            
-            // تحديث الواجهة الرئيسية
-            document.getElementById('playerContent').innerHTML = `
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 3em; margin-bottom: 15px;">🔴</div>
-                    <h3 style="color: #4caf50;">جاري تشغيل: ${name}</h3>
-                    <p>تم فتح القناة في نافذة جديدة</p>
-                    <p style="opacity: 0.7; font-size: 0.9em;">إذا لم تفتح النافذة، تأكد من السماح بالنوافذ المنبثقة</p>
-                </div>
-            `;
+    document.title = `${name} - IPTV Pro`;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // تحديث الواجهة
+    renderOriginalChannels();
+}
+
+// إيقاف التشغيل
+function stopPlayback() {
+    const videoPlayer = document.getElementById('videoPlayer');
+    const noPlayer = document.getElementById('noPlayer');
+    const currentChannel = document.getElementById('currentChannel');
+    
+    if (currentHls) {
+        currentHls.destroy();
+        currentHls = null;
+    }
+    
+    videoPlayer.pause();
+    videoPlayer.src = '';
+    videoPlayer.style.display = 'none';
+    currentChannel.style.display = 'none';
+    noPlayer.style.display = 'flex';
+}
+
+// نسخ رابط القناة
+function copyChannelUrl(url, name) {
+    navigator.clipboard.writeText(url).then(() => {
+        alert(`✅ تم نسخ رابط ${name}`);
+    });
+}
+
+// تصفية القنوات
+function filterChannels() {
+    displayChannels();
+}
+
+// رفع ملف M3U
+function showUploadSection() {
+    document.getElementById('uploadSection').style.display = 'block';
+}
+
+function handleFileUpload(files) {
+    if (files.length > 0) {
+        const file = files[0];
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            parseM3UFile(e.target.result);
+        };
+        
+        reader.readAsText(file);
+    }
+}
+
+function parseM3UFile(content) {
+    alert('✅ تم رفع الملف بنجاح! سيتم دعم تحليل الملف في الإصدارات القادمة.');
+}
+
+// تصدير القنوات
+function exportPlaylist() {
+    const m3uContent = generateM3UContent();
+    const blob = new Blob([m3uContent], { type: 'application/x-mpegurl' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'iptv-playlist.m3u';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+function generateM3UContent() {
+    let content = '#EXTM3U\n';
+    channels.forEach(channel => {
+        content += `#EXTINF:-1 tvg-id="${channel.name}" tvg-name="${channel.name}" tvg-logo="${channel.logo}" group-title="${channel.category}",${channel.name}\n`;
+        content += `${channel.url}\n\n`;
+    });
+    return content;
+}
+
+// ملء الشاشة
+function toggleFullscreen() {
+    const videoPlayer = document.getElementById('videoPlayer');
+    if (!document.fullscreenElement) {
+        videoPlayer.requestFullscreen().catch(err => {
+            console.log(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+    } else {
+        document.exitFullscreen();
+    }
+}
+
+// تعليمات التشغيل
+function showInstructions() {
+    alert(`🎯 تعليمات الاستخدام:
+• انقر على أي قناة لتشغيلها
+• استخدم شريط البحث للعثور على قنوات محددة
+• يمكنك نسخ رابط أي قناة للاستخدام في تطبيقات أخرى
+• استخدم زر التصدير لتحميل قائمة القنوات
+• بعض القنوات قد تحتاج إلى VPN`);
+}
+
+// تبديل المفضلة
+function toggleFavorite(channelId) {
+    const index = favorites.indexOf(channelId);
+    
+    if (index === -1) {
+        favorites.push(channelId);
+    } else {
+        favorites.splice(index, 1);
+    }
+    
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    renderOriginalChannels();
+}
+
+// تحميل HLS.js
+function loadHLS() {
+    if (window.Hls) {
+        displayChannels();
+        return;
+    }
+    
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/hls.js@latest';
+    script.onload = displayChannels;
+    script.onerror = displayChannels;
+    document.head.appendChild(script);
+}
+
+// بدء التطبيق
+document.addEventListener('DOMContentLoaded', loadHLS);
+
+// تبديل الأقسام
+document.querySelectorAll('.category-toggle').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const category = e.currentTarget.getAttribute('data-category');
+        const categoryElement = document.getElementById(`${category}-category`);
+        const channelsElement = categoryElement.querySelector('.channels');
+        const toggleBtn = categoryElement.querySelector('.category-toggle i');
+        
+        if (channelsElement.style.display === 'none') {
+            channelsElement.style.display = 'grid';
+            toggleBtn.className = 'fas fa-chevron-down';
+        } else {
+            channelsElement.style.display = 'none';
+            toggleBtn.className = 'fas fa-chevron-up';
         }
-
-        // تحميل القنوات عند فتح الصفحة
-        document.addEventListener('DOMContentLoaded', displayChannels);
-    </script>
+    });
+});
+//]]>
+</script>
 </body>
 </html>
